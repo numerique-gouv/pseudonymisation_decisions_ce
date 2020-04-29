@@ -2,9 +2,11 @@
 
 ## Qu'est-ce que la pseudonymisation ? 
 
-### Quelle différence entre anonymisation et pseudonymisation ?
+### L'avantage de la pseudonymisation vs anonymisation
 
-Le [guide de la CNIL sur l'anonymisation des données](https://www.cnil.fr/fr/lanonymisation-des-donnees-un-traitement-cle-pour-lopen-data) présente bien la différence entre anonymisation et pseudonymisation :
+Tout d'abord, quelle est la différence entre anonymisation et pseudonymisation? 
+
+Le [guide de la CNIL sur l'anonymisation des données](https://www.cnil.fr/fr/lanonymisation-des-donnees-un-traitement-cle-pour-lopen-data) présente bien cette différence:
 
 > **L’anonymisation** est un traitement qui consiste à utiliser un ensemble de techniques de manière à rendre **impossible, en pratique, toute identification de la personne** par quelque moyen que ce soit et ce de **manière irréversible**.
 
@@ -16,7 +18,7 @@ La différence entre anonymisation et pseudonymisation réside ainsi dans le **c
 Supposons qu'une caisse d'allocations familiales (CAF) dispose de deux fichiers : l'un avec les adresses des demandeurs d'allocation logement, l'autre avec les montants des allocations versées à chacun d'eux. Dans les deux figurent des informations permettant d'identifier l'individu, par exemple son nom et sa date de naissance. Si la CAF souhaite **anonymiser** ces données, elles supprimera simplement ces noms et dates de naissances. Impossible de savoir qui se cache derrière les adresses ou derrières les allocations reçues, ce qui garantit la protection totale des données personnelles. Mais impossible aussi pour un sociologue d'utiliser ces données pour étudier, par exemple, la répartition géographique des allocations. Si elle souhaite **pseudonymiser** ces données, elle remplacera simplement les noms et dates par un identifiant unique dont elle garde le secret. Mais cela n'empêchera pas un individu mal intentionné d'utiliser des données extérieures pour identifier qui habite à chacune des adresses du premier fichier, et retrouver ensuite qui a reçu des allocations grâce à l'identifiant unique qui lie les deux bases.
 :::
 
-Ainsi, si l'anonymisation seule garantit une totale protection des données à cacarère personnel, elle implique parfois une importante perte d'information, nécessaire à empêcher la réidentification mais limitant les réutilisation possibles des données. La pseudonymisation est donc une alternative attractive, à condition de garantir une protection suffisante  
+Ainsi, si l'anonymisation seule garantit une totale protection des données à cacarère personnel, elle implique parfois une importante perte d'information, nécessaire à empêcher la réidentification mais limitant les réutilisation possibles des données. La pseudonymisation est donc une alternative attractive, à condition de garantir une protection suffisante.  
 
 ### Pourquoi pseudonymiser des documents administratifs ?
 
@@ -37,11 +39,11 @@ Un extrait de décision de justice pseudonymisée
 
 ::: tip Quelle quantité de données retirer ? Un exemple fictif
 Prenons l'exemple d'un extrait de décision de justice fictive : *"Monsieur Dupont est accusé d'avoir cambriolé l'établissement "Café de la Paix" à Gentioux-Pigerolles, en Creuse, situé en face de son domicile, et d'avoir dérobé la recette de la semaine évaluée à 1000€"*.
-- Cas 1 : on conserve le plus d'information possible, en supprimant néanmoins les données à caractère personel. La preudonymisation sera par exemple : *"Monsieur X. est accusé d'avoir cambriolé l'établissement "Café XXX" à Gentioux-Pigerolles, en Creuse, situé en face de son domicile, et d'avoir dérobé la recette de la semaine évaluée à 1000€"*. Le problème, c'est que s'il n'y a qu'un seul café dans ce petit village, il est très aisé de comprendre de quel établissement on parle, de sa localisation et donc celle du domicile de l'accusé, et ainsi de réidentifier ce dernier si l'on est familier du village. La pseudonymisation est donc inutile et ne protège pas suffisamment les données à caractère personnel.
-- Cas 2 : on conserve le moins d'information possible. on pourra alors obtenir la psudonymisation suivante : *"Monsieur X. est accusé d'avoir cambriolé l'établissement "XXX" à YYYY, en ZZZ, situé en face de son domicile, et d'avoir dérobé la recette de la semaine évaluée à NNNN€"*. Le problème c'est qu'il n'y a là plus beaucoup d'information utile. Par exemple, comment réaliser une cartographie du crime sans localisation ? Comment estimer les préjudices moyens des cambriolages pour un assureur ?
+- Cas 1 : on conserve le plus d'information possible, en supprimant néanmoins les données à caractère personnel. La pseudonymisation sera par exemple : *"Monsieur X. est accusé d'avoir cambriolé l'établissement "Café XXX" à Gentioux-Pigerolles, en Creuse, situé en face de son domicile, et d'avoir dérobé la recette de la semaine évaluée à 1000€"*. Le problème, c'est que s'il n'y a qu'un seul café dans ce petit village, il est très aisé de comprendre de quel établissement on parle, de sa localisation et donc celle du domicile de l'accusé, et ainsi de réidentifier ce dernier si l'on est familier du village. La pseudonymisation est donc inutile et ne protège pas suffisamment les données à caractère personnel.
+- Cas 2 : on conserve le moins d'information possible. on pourra alors obtenir la pseudonymisation suivante : *"Monsieur X. est accusé d'avoir cambriolé l'établissement "XXX" à YYYY, en ZZZ, situé en face de son domicile, et d'avoir dérobé la recette de la semaine évaluée à NNNN€"*. Le problème c'est qu'il n'y a là plus beaucoup d'information utile. Par exemple, comment réaliser une cartographie du crime sans localisation ? Comment estimer les préjudices moyens des cambriolages pour un assureur ?
 :::
 
-Un rapport du [groupe de travail du G29 sur la protection des personnes à l'égard du traitement des données à caractère personnel](https://www.cnil.fr/sites/default/files/atoms/files/wp216_fr.pdf) présente une analyse détaillée des risques de réidentification après pseudonymisation, d'un point de vue juridique et technique, et des bonnes pratiques en fonction des types de données.
+Pour vous guider dans cet arbitrage, un rapport du [groupe de travail du G29 sur la protection des personnes à l'égard du traitement des données à caractère personnel](https://www.cnil.fr/sites/default/files/atoms/files/wp216_fr.pdf) présente une analyse détaillée des risques de réidentification après pseudonymisation, d'un point de vue juridique et technique, et des bonnes pratiques en fonction des types de données.
 
 ## Quelles sont les différentes méthodes de pseudonymisation ?
 
@@ -81,8 +83,8 @@ Essentiel également, le volume de documents annotés nécessaires dépendra de 
 
 Puisque la tâche de notre IA consiste à reconnaître la catégorie sémantique de chaque mot, il est nécessaire en amont de tout projet de **disposer "d'exemples" que l'on souhaite montrer à l'algorithme pour qu'il s'entraîne**. Il sera donc nécessaire de constituer au préalable, à la main (humaine), une base d'exemples corrects. **Cette tâche consistant à attribuer des labels à certains mots ou groupes de mots d'un document s'appelle l'annotation**. Cette tâche pourra nécessiter des compétences spécifiques en fonction de la nature des documents et des catégories à annoter.
 
-::: tip L'annotation, un processus exigeant et chronophage
-Le processus d'annotation requiert de mobiliser des équipes souvent nombreuses (pour aller plus vite) mais aussi qualifiées. Par exemple, si vous cherchez à identifier les noms, prénoms et adresses dans un [recours administratif](https://www.service-public.fr/particuliers/vosdroits/F2474), une simple maîtrise du français suffira. Par contre, si vous cherchez à identifier les moyens et les conclusions juridiques mentionnées, il vous faudra disposer d'une équipe de juristes expérmientés ! Pour des documents complexes, il pourra ainsi être nécessaire de mobiliser longuement des experts métiers pour obtenir une quantité d'annotation suffisante et de qualité (avec le moins de mauvais labels). On parle même de **campagnes d'annotation** !
+::: tip L'annotation, un processus exigeant et chronophage mais gage de qualité
+Le processus d'annotation requiert de mobiliser des équipes souvent nombreuses (pour aller plus vite) mais aussi qualifiées. Par exemple, si vous cherchez à identifier les noms, prénoms et adresses dans un [recours administratif](https://www.service-public.fr/particuliers/vosdroits/F2474), une simple maîtrise du français suffira. Par contre, si vous cherchez à identifier les moyens et les conclusions juridiques mentionnées, il vous faudra disposer d'une équipe de juristes expérimentés ! Pour des documents complexes, il pourra ainsi être nécessaire de mobiliser longuement des experts métiers pour obtenir une quantité d'annotation suffisante et de qualité (avec moins de mauvais labels). On parle même de **campagnes d'annotation** !
 :::
 
 Afin de constituer un ensemble de documents annotés, il est nécessaire d'utiliser un logiciel d'annotation qui permet d'enregistrer les annotations réalisées par les annotateurs. Il existe de nombreux logiciels d'annotation, dont beaucoup sont open source comme [Doccano](http://doccano.herokuapp.com/).
